@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         setID();
         setPager();
     }
+
     private void setID(){
         Title = findViewById(R.id.Title);
         Title.setText("");

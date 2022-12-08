@@ -30,6 +30,7 @@ public class CreateAccount extends Fragment {
     private User user = new User();
     private Loading loading;
     private View view;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_create_account, container, false);
@@ -45,18 +46,9 @@ public class CreateAccount extends Fragment {
         return view;
     }
     private void EndIcon() {
-        TextInputLayoutFirstName.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { Clear(TextInputLayoutFirstName); }
-        });
-        TextInputLayoutLastName.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { Clear(TextInputLayoutLastName); }
-        });
-        TextInputLayoutEmail.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { Clear(TextInputLayoutEmail); }
-        });
+        TextInputLayoutFirstName.setEndIconOnClickListener( v -> Clear(TextInputLayoutFirstName) );
+        TextInputLayoutLastName.setEndIconOnClickListener( v -> Clear(TextInputLayoutLastName) );
+        TextInputLayoutEmail.setEndIconOnClickListener( v -> Clear(TextInputLayoutEmail) );
     }
     private void Clear(TextInputLayout input){
         input.setHelperText("");
@@ -99,6 +91,7 @@ public class CreateAccount extends Fragment {
         ButtonFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                CheckValues();
                 if(TextInputLayoutEmail.getEditText().getText().length() > 0 && TextInputLayoutPassword.getEditText().getText().length() > 5 && TextInputLayoutPasswordConfirm.getEditText().getText().length() > 5 &&
                         isEmailValid(TextInputLayoutEmail.getEditText().getText().toString()) && TextInputLayoutFirstName.getEditText().getText().length() > 0 && TextInputLayoutLastName.getEditText().getText().length() > 0){
                     if(!(TextInputLayoutPassword.getEditText().getText().toString().equals(TextInputLayoutPasswordConfirm.getEditText().getText().toString())))

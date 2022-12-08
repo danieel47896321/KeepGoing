@@ -57,22 +57,16 @@ public class SignIn extends Fragment {
         return view;
     }
     private void ResetPassword() {
-        ResetPassword.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getActivity(), ResetPassword.class);
-                startActivity(intent);
-                getActivity().finish();
-            }
+        ResetPassword.setOnClickListener( v -> {
+            Intent intent = new Intent(getActivity(), ResetPassword.class);
+            startActivity(intent);
+            getActivity().finish();
         });
     }
     private void EndIcon() {
-        TextInputLayoutEmail.setEndIconOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextInputLayoutEmail.setHelperText("");
-                TextInputLayoutEmail.getEditText().setText("");
-            }
+        TextInputLayoutEmail.setEndIconOnClickListener( v -> {
+            TextInputLayoutEmail.setHelperText("");
+            TextInputLayoutEmail.getEditText().setText("");
         });
     }
     private boolean isEmailValid(CharSequence email) { return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches(); }
@@ -91,16 +85,13 @@ public class SignIn extends Fragment {
             TextInputLayoutPassword.setHelperText("");
     }
     private void SignInCheck(){
-        ButtonSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                CheckValues();
-                if(TextInputLayoutEmail.getEditText().getText().length() > 0 && TextInputLayoutPassword.getEditText().getText().length() > 5 && isEmailValid(TextInputLayoutEmail.getEditText().getText().toString()) && TextInputLayoutPassword.getEditText().getText().length() > 0)
-                    SignIn();
-            }
+        ButtonSignIn.setOnClickListener( v -> {
+            CheckValues();
+            if(TextInputLayoutEmail.getEditText().getText().length() > 0 && TextInputLayoutPassword.getEditText().getText().length() > 5 && isEmailValid(TextInputLayoutEmail.getEditText().getText().toString()) && TextInputLayoutPassword.getEditText().getText().length() > 0)
+                SignInButton();
         });
     }
-    private void SignIn(){
+    private void SignInButton(){
         firebaseAuth.signInWithEmailAndPassword(TextInputLayoutEmail.getEditText().getText().toString(), TextInputLayoutPassword.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
@@ -155,9 +146,11 @@ public class SignIn extends Fragment {
         }
     }
     private void Home(User user){
-        Intent intent = new Intent(getActivity(), Home.class);
-        intent.putExtra("user", user);
-        startActivity(intent);
-        getActivity().finish();
+        if(getActivity() != null) {
+            Intent intent = new Intent(getActivity(), Home.class);
+            intent.putExtra("user", user);
+            startActivity(intent);
+            getActivity().finish();
+        }
     }
 }
