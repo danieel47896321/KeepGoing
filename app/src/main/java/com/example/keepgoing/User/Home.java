@@ -1,7 +1,6 @@
 package com.example.keepgoing.User;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -11,9 +10,7 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -27,14 +24,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.Calendar;
 
 public class Home extends AppCompatActivity {
-    private ImageView BackIcon;
     private TextView Title;
-    private Intent intent;
-    private User user = new User();
+    private ImageView BackIcon;
     private TabLayout tabLayout;
     private ViewPager2 viewPager2;
     private String[] titles;
-    private ViewPagerAdapter fragmentPager;
+    private final int SIZE = 7;
+    private Intent intent;
+    private User user = new User();
+    private PagerAdapter pagerAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +41,7 @@ public class Home extends AppCompatActivity {
     }
     private void init(){
         setID();
+        setPager();
         SignOutIcon();
         setCurrentDay();
     }
@@ -55,10 +54,12 @@ public class Home extends AppCompatActivity {
         Title.setText(R.string.Home);
         tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.viewPager2);
-        fragmentPager = new ViewPagerAdapter(Home.this);
-        viewPager2.setAdapter(fragmentPager);
-        titles = new String[7];
+        titles = new String[SIZE];
         titles = getResources().getStringArray(R.array.Home);
+    }
+    private void setPager(){
+        pagerAdapter = new PagerAdapter(Home.this);
+        viewPager2.setAdapter(pagerAdapter);
         new TabLayoutMediator(tabLayout,viewPager2,((tab, position) -> tab.setText(titles[position]))).attach();
     }
     public void setCurrentDay(){
@@ -90,8 +91,9 @@ public class Home extends AppCompatActivity {
         }
         tab.select();
     }
-    public static class ViewPagerAdapter extends FragmentStateAdapter {
-        public ViewPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
+    public static class PagerAdapter extends FragmentStateAdapter {
+        private final int SIZE = 7;
+        public PagerAdapter(@NonNull FragmentActivity fragmentActivity) {
             super(fragmentActivity);
         }
         @NonNull
@@ -125,13 +127,10 @@ public class Home extends AppCompatActivity {
             return workoutFragment;
         }
         @Override
-        public int getItemCount() { return 7; }
+        public int getItemCount() { return SIZE; }
     }
     private void SignOutIcon(){
-        BackIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { onBackPressed(); }
-        });
+        BackIcon.setOnClickListener( v -> onBackPressed() );
     }
     public void onBackPressed(){
         AlertDialog.Builder builder = new AlertDialog.Builder(Home.this);

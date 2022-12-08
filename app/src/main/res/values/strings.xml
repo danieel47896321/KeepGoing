@@ -75,15 +75,9 @@
     <string name="Weight">Weight</string>
     <string name="Other" translatable="true">Other</string>
     <!-- Arrays -->
-    <string-array name="MuscleType">
-        <item>@string/Shoulder</item>
-        <item>@string/FrontHand</item>
-        <item>@string/BackHand</item>
-        <item>@string/Chest</item>
-        <item>@string/Back</item>
-        <item>@string/Legs</item>
-        <item>@string/Stomach</item>
-        <item>@string/Other</item>
+    <string-array name="Main">
+        <item>@string/SignIn</item>
+        <item>@string/CreateAccount</item>
     </string-array>
     <string-array name="Home">
         <item>@string/Sunday</item>
@@ -93,5 +87,15 @@
         <item>@string/Thursday</item>
         <item>@string/Friday</item>
         <item>@string/Saturday</item>
+    </string-array>
+    <string-array name="MuscleType">
+        <item>@string/Shoulder</item>
+        <item>@string/FrontHand</item>
+        <item>@string/BackHand</item>
+        <item>@string/Chest</item>
+        <item>@string/Back</item>
+        <item>@string/Legs</item>
+        <item>@string/Stomach</item>
+        <item>@string/Other</item>
     </string-array>
 </resources>

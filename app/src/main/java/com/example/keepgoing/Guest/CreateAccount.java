@@ -30,7 +30,6 @@ public class CreateAccount extends Fragment {
     private User user = new User();
     private Loading loading;
     private View view;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_create_account, container, false);
@@ -98,7 +97,7 @@ public class CreateAccount extends Fragment {
                         TextInputLayoutPasswordConfirm.setHelperText(getResources().getString(R.string.InvalidPassword));
                     else{
                         loading = new Loading(view.getContext());
-                        firebaseAuth.fetchSignInMethodsForEmail(TextInputLayoutEmail.getEditText().getText().toString()).addOnCompleteListener(new OnCompleteListener<SignInMethodQueryResult>() {
+                        firebaseAuth.fetchSignInMethodsForEmail(TextInputLayoutEmail.getEditText().getText().toString()).addOnCompleteListener( new OnCompleteListener<SignInMethodQueryResult>() {
                             @Override
                             public void onComplete(@NonNull Task<SignInMethodQueryResult> task) {
                                 if(task.isSuccessful()) {

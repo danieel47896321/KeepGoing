@@ -44,8 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tabLayout = findViewById(R.id.tabLayout);
         viewPager2 = findViewById(R.id.viewPager2);
         titles = new String[SIZE];
-        titles[0] = getResources().getString(R.string.SignIn);
-        titles[1] = getResources().getString(R.string.CreateAccount);
+        titles = getResources().getStringArray(R.array.Main);
     }
     private void setPager(){
         pagerAdapter = new PagerAdapter(MainActivity.this);
