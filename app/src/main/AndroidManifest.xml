@@ -20,6 +20,9 @@
             android:name=".User.Home"
             android:exported="false" />
         <activity
+            android:name=".Guest.ResetPassword"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
