@@ -92,39 +92,30 @@ public class GenericPlan extends AppCompatActivity {
         floatingActionButtonRemove = findViewById(R.id.floatingActionButtonRemove);
     }
     private void setAddAndRemove(){
-        floatingActionButtonOpen.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isOpen = !isOpen;
-                rotateOpen = AnimationUtils.loadAnimation(context,R.anim.rotate_open);
-                rotateClose = AnimationUtils.loadAnimation(context,R.anim.rotate_close);
-                fromBottom = AnimationUtils.loadAnimation(context,R.anim.from_bottom);
-                toBottom = AnimationUtils.loadAnimation(context,R.anim.to_bottom);
-                if (isOpen) {
-                    floatingActionButtonAdd.setVisibility(View.VISIBLE);
-                    floatingActionButtonRemove.setVisibility(View.VISIBLE);
-                    floatingActionButtonAdd.setAnimation(fromBottom);
-                    floatingActionButtonRemove.setAnimation(fromBottom);
-                    floatingActionButtonOpen.setAnimation(rotateOpen);
-                    floatingActionButtonAdd.setClickable(true);
-                    floatingActionButtonRemove.setClickable(true);
-                    floatingActionButtonAdd.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) { AddExerciseDialog(); }
-                    });
-                    floatingActionButtonRemove.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) { RemoveExerciseDialog(); }
-                    });
-                } else {
-                    floatingActionButtonAdd.setVisibility(View.INVISIBLE);
-                    floatingActionButtonRemove.setVisibility(View.INVISIBLE);
-                    floatingActionButtonAdd.setAnimation(toBottom);
-                    floatingActionButtonRemove.setAnimation(toBottom);
-                    floatingActionButtonOpen.setAnimation(rotateClose);
-                    floatingActionButtonAdd.setClickable(false);
-                    floatingActionButtonRemove.setClickable(false);
-                }
+        floatingActionButtonOpen.setOnClickListener( v -> {
+            isOpen = !isOpen;
+            rotateOpen = AnimationUtils.loadAnimation(context,R.anim.rotate_open);
+            rotateClose = AnimationUtils.loadAnimation(context,R.anim.rotate_close);
+            fromBottom = AnimationUtils.loadAnimation(context,R.anim.from_bottom);
+            toBottom = AnimationUtils.loadAnimation(context,R.anim.to_bottom);
+            if (isOpen) {
+                floatingActionButtonAdd.setVisibility(View.VISIBLE);
+                floatingActionButtonRemove.setVisibility(View.VISIBLE);
+                floatingActionButtonAdd.setAnimation(fromBottom);
+                floatingActionButtonRemove.setAnimation(fromBottom);
+                floatingActionButtonOpen.setAnimation(rotateOpen);
+                floatingActionButtonAdd.setClickable(true);
+                floatingActionButtonRemove.setClickable(true);
+                floatingActionButtonAdd.setOnClickListener( v1 -> AddExerciseDialog() );
+                floatingActionButtonRemove.setOnClickListener( v1 -> RemoveExerciseDialog() );
+            } else {
+                floatingActionButtonAdd.setVisibility(View.INVISIBLE);
+                floatingActionButtonRemove.setVisibility(View.INVISIBLE);
+                floatingActionButtonAdd.setAnimation(toBottom);
+                floatingActionButtonRemove.setAnimation(toBottom);
+                floatingActionButtonOpen.setAnimation(rotateClose);
+                floatingActionButtonAdd.setClickable(false);
+                floatingActionButtonRemove.setClickable(false);
             }
         });
     }
@@ -162,41 +153,32 @@ public class GenericPlan extends AppCompatActivity {
         alertDialog.show();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         MuscleType();
-        ButtonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { alertDialog.cancel(); }
-        });
-        ButtonAdd.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                if(TextInputLayoutExerciseName.getEditText().getText().toString().equals(""))
-                    TextInputLayoutExerciseName.setHelperText(getResources().getString(R.string.Required));
-                else
-                    TextInputLayoutExerciseName.setHelperText("");
-                if(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals(""))
-                    TextInputLayoutTypeOfMuscle.setHelperText(getResources().getString(R.string.Required));
-                else
-                    TextInputLayoutTypeOfMuscle.setHelperText("");
-                if(TextInputLayoutReps.getEditText().getText().toString().equals(""))
-                    TextInputLayoutReps.setHelperText(getResources().getString(R.string.Required));
-                else
-                    TextInputLayoutReps.setHelperText("");
-                if(!(TextInputLayoutExerciseName.getEditText().getText().toString().equals("")) && !(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals("")) && !(TextInputLayoutReps.getEditText().getText().toString().equals(""))){
-                    alertDialog.cancel();
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(plan.getDay()).child(user.getUid()).child(plan.getDate()).child("exercises");
-                    exercises.add(new Exercise(TextInputLayoutExerciseName.getEditText().getText().toString(),TextInputLayoutDescription.getEditText().getText().toString(),TextInputLayoutTypeOfMuscle.getEditText().getText().toString(),"null",Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString())));
-                    databaseReference.setValue(exercises);
-                }
+        ButtonCancel.setOnClickListener( v -> alertDialog.cancel() );
+        ButtonAdd.setOnClickListener( v -> {
+            if(TextInputLayoutExerciseName.getEditText().getText().toString().equals(""))
+                TextInputLayoutExerciseName.setHelperText(getResources().getString(R.string.Required));
+            else
+                TextInputLayoutExerciseName.setHelperText("");
+            if(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals(""))
+                TextInputLayoutTypeOfMuscle.setHelperText(getResources().getString(R.string.Required));
+            else
+                TextInputLayoutTypeOfMuscle.setHelperText("");
+            if(TextInputLayoutReps.getEditText().getText().toString().equals(""))
+                TextInputLayoutReps.setHelperText(getResources().getString(R.string.Required));
+            else if(Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString()) <= 0)
+                TextInputLayoutReps.setHelperText(getResources().getString(R.string.NumberOfReps));
+            else
+                TextInputLayoutReps.setHelperText("");
+            if(!(TextInputLayoutExerciseName.getEditText().getText().toString().equals("")) && (Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString()) > 0) && !(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals("")) && !(TextInputLayoutReps.getEditText().getText().toString().equals(""))){
+                alertDialog.cancel();
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(plan.getDay()).child(user.getUid()).child(plan.getDate()).child("exercises");
+                exercises.add(new Exercise(TextInputLayoutExerciseName.getEditText().getText().toString(),TextInputLayoutDescription.getEditText().getText().toString(),TextInputLayoutTypeOfMuscle.getEditText().getText().toString(),"null",Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString())));
+                databaseReference.setValue(exercises);
             }
         });
     }
     private void MuscleType(){
-        String types[] = getResources().getStringArray(R.array.MuscleType);
-        TextInputLayoutTypeOfMuscle.getEditText().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { setDialog(types ,getResources().getString(R.string.TypeOfMuscle),TextInputLayoutTypeOfMuscle.getEditText()); }
-        });
+        TextInputLayoutTypeOfMuscle.getEditText().setOnClickListener( v -> setDialog(getResources().getStringArray(R.array.MuscleType) ,getResources().getString(R.string.TypeOfMuscle),TextInputLayoutTypeOfMuscle.getEditText()) );
     }
     private void RemoveExerciseDialog(){
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
@@ -212,38 +194,28 @@ public class GenericPlan extends AppCompatActivity {
         alertDialog.show();
         alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         ExercisePick();
-        ButtonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) { alertDialog.cancel(); }
-        });
-        ButtonRemove.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onClick(View v) {
-                if(TextInputLayoutPlan.getEditText().getText().toString().equals(""))
-                    TextInputLayoutPlan.setHelperText(getResources().getString(R.string.Required));
-                else
-                    TextInputLayoutPlan.setHelperText("");
-                if(!TextInputLayoutPlan.getEditText().getText().toString().equals("")) {
-                    alertDialog.cancel();
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(plan.getDay()).child(user.getUid()).child(plan.getDate()).child("exercises");
-                    for(int i=0; i<exercises.size();i++)
-                        if(TextInputLayoutPlan.getEditText().getText().toString().equals(exercises.get(i).getExercise()))
-                            exercises.remove(i);
-                    databaseReference.setValue(exercises);
-                }
+        ButtonCancel.setOnClickListener( v -> alertDialog.cancel() );
+        ButtonRemove.setOnClickListener( v -> {
+            if(TextInputLayoutPlan.getEditText().getText().toString().equals(""))
+                TextInputLayoutPlan.setHelperText(getResources().getString(R.string.Required));
+            else
+                TextInputLayoutPlan.setHelperText("");
+            if(!TextInputLayoutPlan.getEditText().getText().toString().equals("")) {
+                alertDialog.cancel();
+                DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(plan.getDay()).child(user.getUid()).child(plan.getDate()).child("exercises");
+                for(int i=0; i<exercises.size();i++)
+                    if(TextInputLayoutPlan.getEditText().getText().toString().equals(exercises.get(i).getExercise()))
+                        exercises.remove(i);
+                databaseReference.setValue(exercises);
             }
         });
     }
     private void ExercisePick(){
-        TextInputLayoutPlan.getEditText().setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String Remove_plans[] = new String[exercises.size()];
-                for(int i=0; i<exercises.size();i++)
-                    Remove_plans[i] = exercises.get(i).getExercise();
-                setDialog(Remove_plans,getResources().getString(R.string.RemoveExercise), TextInputLayoutPlan.getEditText());
-            }
+        TextInputLayoutPlan.getEditText().setOnClickListener( v -> {
+            String Remove_plans[] = new String[exercises.size()];
+            for(int i=0; i<exercises.size();i++)
+                Remove_plans[i] = exercises.get(i).getExercise();
+            setDialog(Remove_plans,getResources().getString(R.string.RemoveExercise), TextInputLayoutPlan.getEditText());
         });
     }
     private void setDialog(String[] array, String title, TextView textViewPick){
@@ -277,10 +249,7 @@ public class GenericPlan extends AppCompatActivity {
         });
     }
     private void BackIcon(){
-        BackIcon.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) { onBackPressed(); }
-        });
+        BackIcon.setOnClickListener( v -> onBackPressed() );
     }
     public void onBackPressed(){
         intent = new Intent(GenericPlan.this, Home.class);

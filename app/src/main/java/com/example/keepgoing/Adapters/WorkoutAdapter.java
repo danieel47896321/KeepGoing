@@ -48,16 +48,12 @@ public class WorkoutAdapter extends RecyclerView.Adapter<WorkoutAdapter.MyViewHo
         Plan plan = planList.get(position);
         holder.PlanName.setText(plan.getPlanName());
         holder.Date.setText(plan.getDate());
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                holder.constraintLayout.setBackgroundColor(context.getResources().getColor(R.color.PickColor));
-                intent = new Intent(context, GenericPlan.class);
-                intent.putExtra("user", user);
-                intent.putExtra("plan", plan);
-                context.startActivity(intent);
-                ((Activity) context).finish();
-            }
+        holder.constraintLayout.setOnClickListener( v -> {
+            intent = new Intent(context, GenericPlan.class);
+            intent.putExtra("user", user);
+            intent.putExtra("plan", plan);
+            context.startActivity(intent);
+            ((Activity) context).finish();
         });
     }
     public int getItemCount() { return planList.size(); }

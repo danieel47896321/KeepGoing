@@ -42,7 +42,6 @@ public class GenericPlanAdapter extends RecyclerView.Adapter<GenericPlanAdapter.
         ConstraintLayout constraintLayout;
         LinearLayout linearLayout;
         RecyclerView recyclerView;
-        View view;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             Exercise = itemView.findViewById(R.id.Exercise);
@@ -53,7 +52,6 @@ public class GenericPlanAdapter extends RecyclerView.Adapter<GenericPlanAdapter.
             addImage = itemView.findViewById(R.id.addImage);
             recyclerView = itemView.findViewById(R.id.recyclerView);
             linearLayout = itemView.findViewById(R.id.linearLayout);
-            view = itemView.findViewById(R.id.view);
             constraintLayout = itemView.findViewById(R.id.constraintLayout);
         }
     }
@@ -71,23 +69,17 @@ public class GenericPlanAdapter extends RecyclerView.Adapter<GenericPlanAdapter.
         holder.Description.setText(exercise.getDescription());
         holder.Sets.setText(context.getResources().getString(R.string.Sets) + ": " + exercise.getSets().size());
         holder.ExerciseImage.setImageResource(R.drawable.person);
-        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                isClicked.set(position,!isClicked.get(position));
-                if(isClicked.get(position)) {
-                    holder.Arrow.setImageResource(R.drawable.arrow_up);
-                    holder.linearLayout.setVisibility(View.VISIBLE);
-                    holder.view.setVisibility(View.VISIBLE);
-                    SetsAdapter setsAdapter = new SetsAdapter(context, exercises.get(position).getSets());
-                    holder.recyclerView.setAdapter(setsAdapter);
-                }
-                else{
-                    holder.Arrow.setImageResource(R.drawable.arrow_down);
-                    holder.linearLayout.setVisibility(View.GONE);
-                    holder.view.setVisibility(View.GONE);
-
-                }
+        holder.constraintLayout.setOnClickListener( v -> {
+            isClicked.set(position,!isClicked.get(position));
+            if(isClicked.get(position)) {
+                holder.Arrow.setImageResource(R.drawable.arrow_up);
+                holder.linearLayout.setVisibility(View.VISIBLE);
+                SetsAdapter setsAdapter = new SetsAdapter(context, exercises.get(position).getSets());
+                holder.recyclerView.setAdapter(setsAdapter);
+            }
+            else{
+                holder.Arrow.setImageResource(R.drawable.arrow_down);
+                holder.linearLayout.setVisibility(View.GONE);
             }
         });
     }

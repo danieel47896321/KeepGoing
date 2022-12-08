@@ -52,6 +52,7 @@
     <string name="Other" translatable="true">אחר</string>
     <string name="Weight" translatable="true">משקל</string>
     <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
+    <string name="NumberOfReps" translatable="true">מספר החזרות המינימלי 1</string>
     <!-- ResetPassword Page -->
     <string name="ResetPassword">איפוס סיסמה</string>
     <string name="ForgotPassword" translatable="true">שכחת את הסיסמה? איפוס סיסמה</string>

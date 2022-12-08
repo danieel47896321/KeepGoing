@@ -74,6 +74,7 @@
     <string name="Search">Search</string>
     <string name="Weight">Weight</string>
     <string name="Other" translatable="true">Other</string>
+    <string name="NumberOfReps" translatable="true">Number of Reps must be 1+</string>
     <!-- Arrays -->
     <string-array name="Main">
         <item>@string/SignIn</item>
