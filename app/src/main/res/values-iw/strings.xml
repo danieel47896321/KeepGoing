@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">KeepGoing</string>
+    <string name="Title">כותרת</string>
+    <string name="Email">אימייל</string>
+    <string name="FirstName">שם פרטי</string>
+    <string name="LastName">שם משפחה</string>
+    <string name="Password">סיסמה</string>
+    <string name="ConfirmPassword">אימות סיסמה</string>
+    <string name="Finish">סיום</string>
+    <string name="Required">חובה</string>
+    <string name="MinimumChars">חובה מינימום 6 תווים</string>
+    <string name="InvalidEmail">אימייל לא תקין</string>
+    <string name="InvalidPassword">סיסמה לא תואמת</string>
+    <string name="Loading">טוען</string>
+    <string name="EmailExist">האימייל כבר קיים במערכת</string>
+    <string name="ErrorMSG">משהו השתבש, אנא נסה שוב בעוד כמה דקות.</string>
+    <string name="Error">שגיאה</string>
+    <string name="OK">אישור</string>
+    <string name="CompleteCreateAccount">נרשמת בהצלחה, בבקשה אמת את חשבונך בעזרת קישור אימות שנשלח לאיימיל שלך.</string>
+    <string name="CheckEmailVerify">חשבון זה עדיין לא אומת, בבקשה בדוק את הקישור שנשלח לאימייל שלך ואמת את החשבון.</string>
+    <string name="EmailNotExist">האימייל לא קיים במערכת</string>
+    <string name="WrongPassword">סיסמה שגויה</string>
+    <string name="SignIn">כניסה</string>
+    <string name="CreateAccount">צור חשבון</string>
+    <string name="AddExercise" translatable="true">הוספת תרגיל</string>
+    <string name="PickExercise" translatable="true">בחירת תרגיל</string>
+    <string name="RemoveExercise" translatable="true">הסרת תרגיל</string>
+    <string name="AddPlan" translatable="true">הוספת תוכנית</string>
+    <string name="RemovePlan" translatable="true">הסרת תוכנית</string>
+    <string name="Sets" translatable="true">סטים</string>
+    <string name="Reps" translatable="true">חזרות</string>
+    <string name="Rest" translatable="true">מנוחה</string>
+    <string name="Plan" translatable="true">תוכנית</string>
+    <string name="Date" translatable="true">תאריך</string>
+    <string name="Add" translatable="true">הוספה</string>
+    <string name="Remove" translatable="true">הסרה</string>
+    <string name="Cancel" translatable="true">ביטול</string>
+    <string name="Description">תיאור</string>
+    <string name="Seconds">שניות</string>
+    <string name="PlanSuccessfullyAdded" translatable="true">התוכנית נוספה בהצלחה.</string>
+    <string name="PlanSuccessfullyRemoved" translatable="true">התוכנית הוסרה בהצלחה.</string>
+    <string name="TypeOfMuscle" translatable="true">סוג שריר</string>
+    <string name="ExerciseName" translatable="true">שם התרגיל</string>
+    <string name="Shoulder" translatable="true">כתפיים</string>
+    <string name="FrontHand" translatable="true">יד קדמית</string>
+    <string name="BackHand" translatable="true">יד אחורית</string>
+    <string name="Chest" translatable="true">חזה</string>
+    <string name="Back" translatable="true">גב</string>
+    <string name="Legs" translatable="true">רגליים</string>
+    <string name="Stomach" translatable="true">בטן</string>
+    <string name="Other" translatable="true">אחר</string>
+    <string name="Weight" translatable="true">משקל</string>
+    <string name="ResetLink" translatable="true">קישור לאיפוס הסיסמה נשלח לאימייל.</string>
+    <!-- ResetPassword Page -->
+    <string name="ResetPassword">איפוס סיסמה</string>
+    <string name="ForgotPassword" translatable="true">שכחת את הסיסמה? איפוס סיסמה</string>
+    <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
+    <!-- GenericPlan Page -->
+    <string name="ExerciseSuccessfullyAdded" translatable="true">התרגיל נוסף בהצלחה.</string>
+    <string name="ExerciseNameExists" translatable="true">התרגיל לא הוסף, קיים כבר תרגיל עם השם הזה.</string>
+    <string name="ExerciseSuccessfullyRemoved" translatable="true">התרגיל הוסר בהצלחה.</string>
+    <!-- Homne Page -->
+    <string name="Sunday" translatable="true">ראשון</string>
+    <string name="Monday" translatable="true">שני</string>
+    <string name="Tuesday" translatable="true">שלישי</string>
+    <string name="Wednesday" translatable="true">רביעי</string>
+    <string name="Thursday" translatable="true">חמישי</string>
+    <string name="Friday" translatable="true">שישי</string>
+    <string name="Saturday" translatable="true">שבת</string>
+    <string name="Home">ראשי</string>
+    <string name="SignOut">התנתק</string>
+    <string name="No">לא</string>
+    <string name="Yes">כן</string>
+    <string name="AreYouSure">האם אתה בטוח שברצונך להתנתק?</string>
+    <string name="Select">בחר</string>
+    <string name="Search">חיפוש</string>
+</resources>

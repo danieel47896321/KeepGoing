@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/grey"
+    tools:context=".Guest.SignIn">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/grey">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="11dp"
+            android:layout_marginRight="11dp"
+            android:layout_marginTop="11dp"
+            android:layout_marginBottom="11dp"
+            android:layout_height="match_parent">
+
+            <androidx.cardview.widget.CardView
+                android:layout_gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="10dp">
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fillViewport="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:orientation="vertical">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputLayout_Style"
+                            android:id="@+id/TextInputLayoutEmail"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:layout_marginTop="10dp"
+                            android:hint="@string/Email"
+                            app:endIconMode="clear_text"
+                            app:startIconDrawable="@drawable/person">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/TextInputEditText_Style"
+                                android:id="@+id/TextInputEditTextInputEmail"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            style="@style/TextInputLayout_Style"
+                            android:id="@+id/TextInputLayoutPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="90dp"
+                            android:hint="@string/Password"
+                            app:endIconMode="password_toggle"
+                            app:startIconDrawable="@drawable/password">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                style="@style/TextInputEditText_Style"
+                                android:id="@+id/TextInputEditTextInputPassword"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPassword" />
+
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <Button
+                            style="@style/Button_Style"
+                            android:id="@+id/ButtonSignIn"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/SignIn"
+                            app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutPassword"
+                            app:layout_constraintStart_toStartOf="@+id/TextInputLayoutPassword"
+                            app:layout_constraintTop_toBottomOf="@+id/ResetPassword" />
+
+                        <TextView
+                            style="@style/Clicked_TextView_Style"
+                            android:id="@+id/ResetPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="@string/ForgotPassword"/>
+
+                    </LinearLayout>
+                </ScrollView>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

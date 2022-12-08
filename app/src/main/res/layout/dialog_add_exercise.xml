@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/ExerciseImage"
+            android:layout_width="80dp"
+            android:layout_height="70dp"
+            android:src="@drawable/add_image"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/TextInputLayoutExerciseName" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayoutExerciseName"
+            style="@style/TextInputLayout_Style"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:hint="@string/ExerciseName"
+            app:endIconMode="clear_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ExerciseImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextInputExerciseName"
+                style="@style/TextInputEditText_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayoutDescription"
+            style="@style/TextInputLayout_Style"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:hint="@string/Description"
+            app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutExerciseName"
+            app:layout_constraintStart_toStartOf="@+id/ExerciseImage"
+            app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutExerciseName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextInputDescription"
+                style="@style/TextInputEditText_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayoutTypeOfMuscle"
+            style="@style/TextInputLayout_Style"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:hint="@string/TypeOfMuscle"
+            app:endIconDrawable="@drawable/drop_down"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutDescription"
+            app:layout_constraintStart_toStartOf="@+id/TextInputLayoutDescription"
+            app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutDescription">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextInputTypeOfMuscle"
+                style="@style/TextInputEditText_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:focusable="false" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/TextInputLayoutReps"
+            style="@style/TextInputLayout_Style"
+            android:layout_width="0dp"
+            android:layout_height="90dp"
+            android:hint="@string/Reps"
+            app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutTypeOfMuscle"
+            app:layout_constraintStart_toStartOf="@+id/TextInputLayoutTypeOfMuscle"
+            app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutTypeOfMuscle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/TextInputEditTextInputReps"
+                style="@style/TextInputEditText_Style"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/ButtonAdd"
+            style="@style/Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:text="@string/AddExercise"
+            app:layout_constraintEnd_toEndOf="@+id/TextInputLayoutReps"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/TextInputLayoutReps"
+            app:layout_constraintTop_toBottomOf="@+id/TextInputLayoutReps" />
+
+        <Button
+            android:id="@+id/ButtonCancel"
+            style="@style/Button_Style"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/Cancel"
+            app:layout_constraintEnd_toEndOf="@+id/ButtonAdd"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/ButtonAdd"
+            app:layout_constraintTop_toBottomOf="@+id/ButtonAdd" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

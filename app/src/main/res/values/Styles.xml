@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextInputLayout_Style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:gravity">start</item>
+        <item name="android:textColorHint">@color/black</item>
+        <item name="hintTextColor">@color/blue</item>
+        <item name="boxStrokeColor">@color/blue</item>
+        <item name="helperTextTextAppearance">@style/TextAppearance.AppCompat.Medium</item>
+        <item name="boxStrokeWidth">3dp</item>
+        <item name="boxStrokeWidthFocused">3dp</item>
+        <item name="helperTextTextColor">@color/red</item>
+        <item name="startIconTint">@color/black</item>
+        <item name="endIconTint">@color/black</item>
+    </style>
+    <style name="TextView_Style_Big" parent="Widget.AppCompat.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="TextView_Style_Normal" parent="Widget.AppCompat.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textColor">@color/default_color</item>
+    </style>
+    <style name="TabLayout_Style" parent="TextAppearance.Design.Tab">
+        <item name="android:textAllCaps">false</item>
+        <item name="textAllCaps">false</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+    <style name="Button_Style" >
+        <item name="cardCornerRadius">10dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">26sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="TextInputEditText_Style" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="android:itemBackground">@color/black</item>
+        <item name="android:layout_gravity">start</item>
+        <item name="android:gravity">start</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="boxStrokeWidthFocused">1dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="Clicked_TextView_Style" parent="Widget.AppCompat.TextView">
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">@color/blue2</item>
+    </style>
+    <style name="AppCompatAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/blue</item>
+        <item name="android:background">@color/white</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="android:text">@color/black</item>
+        <item name="title">@color/black</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/blue</item>
+    </style>
+    <style name="EditText_Style_Normal" parent="Widget.AppCompat.EditText">
+        <item name="android:textSize">25sp</item>
+        <item name="android:gravity">start</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColorHint">@color/default_color</item>
+        <item name="android:textAlignment" >viewStart</item>
+        <item name="android:background">@android:drawable/editbox_background</item>
+    </style>
+</resources>

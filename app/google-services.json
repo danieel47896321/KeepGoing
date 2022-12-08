@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "580990109907",
+    "project_id": "keepgoing-c71f6",
+    "storage_bucket": "keepgoing-c71f6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580990109907:android:e10ef846b1c440eb5e6c26",
+        "android_client_info": {
+          "package_name": "com.example.keepgoing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580990109907-oohal8a16hmpsqh5t6ojqf3o7vodjt3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBiNhHnwlRD-79gB68_h7iYxR8dLJbgxzo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580990109907-oohal8a16hmpsqh5t6ojqf3o7vodjt3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

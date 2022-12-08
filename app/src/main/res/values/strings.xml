@@ -1,0 +1,97 @@
+<resources>
+    <string name="app_name">KeepGoing</string>
+    <string name="Title">Title</string>
+    <string name="CreateAccount">Create Account</string>
+    <string name="SignIn">Sign In</string>
+    <string name="Email">Email</string>
+    <string name="FirstName">First Name</string>
+    <string name="LastName">Last Name</string>
+    <string name="Password">Password</string>
+    <string name="ConfirmPassword">Confirm Password</string>
+    <string name="Finish">Finish</string>
+    <string name="Required">Required</string>
+    <string name="MinimumChars">Required minimum 6 chars</string>
+    <string name="InvalidEmail">Invalid Email</string>
+    <string name="InvalidPassword">Invalid Password</string>
+    <string name="Loading">Loading</string>
+    <string name="EmailExist">Email exist in the system</string>
+    <string name="ErrorMSG">Something went wrong please try again in a few minutes.</string>
+    <string name="Error">Error</string>
+    <string name="OK">OK</string>
+    <string name="CompleteCreateAccount">Successfully registered, Please verify your email with link sent to your email.</string>
+    <string name="CheckEmailVerify">This account not verify yet, please check the link sent to your email to verify this account.</string>
+    <string name="WrongPassword">Wrong Password</string>
+    <string name="EmailNotExist">Email not exist in the system</string>
+    <string name="Home">Home</string>
+    <string name="ResetLink" translatable="true">Reset Link has been send to your Email.</string>
+    <!-- ResetPassword Page -->
+    <string name="ResetPassword">ResetPassword</string>
+    <string name="ForgotPassword" translatable="true">Forgot password? Reset Password</string>
+    <string name="ForgotPasswordInfo" translatable="true">Please enter the email address which you want to reset the password.</string>
+    <!-- WorkOut Page -->
+    <string name="Sunday" translatable="true">Sunday</string>
+    <string name="Monday" translatable="true">Monday</string>
+    <string name="Tuesday" translatable="true">Tuesday</string>
+    <string name="Wednesday" translatable="true">Wednesday</string>
+    <string name="Thursday" translatable="true">Thursday</string>
+    <string name="Friday" translatable="true">Friday</string>
+    <string name="Saturday" translatable="true">Saturday</string>
+    <string name="AddExercise" translatable="true">Add Exercise</string>
+    <string name="PickExercise" translatable="true">Pick Exercise</string>
+    <string name="RemoveExercise" translatable="true">Remove Exercise</string>
+    <string name="AddPlan" translatable="true">Add Plan</string>
+    <string name="RemovePlan" translatable="true">Remove Plan</string>
+    <string name="Sets" translatable="true">Sets</string>
+    <string name="Reps" translatable="true">Reps</string>
+    <string name="Rest" translatable="true">Rest</string>
+    <string name="Plan" translatable="true">Plan</string>
+    <string name="Date" translatable="true">Date</string>
+    <string name="Add" translatable="true">Add</string>
+    <string name="Remove" translatable="true">Remove</string>
+    <string name="Cancel" translatable="true">Cancel</string>
+    <string name="Description">Description</string>
+    <string name="Seconds">Seconds</string>
+    <string name="PlanSuccessfullyAdded" translatable="true">The plan was successfully added.</string>
+    <string name="PlanSuccessfullyRemoved" translatable="true">The plan was successfully removed.</string>
+    <string name="TypeOfMuscle" translatable="true">Type of muscle</string>
+    <string name="ExerciseName" translatable="true">Exercise Name</string>
+    <string name="Shoulder" translatable="true">Shoulder</string>
+    <string name="FrontHand" translatable="true">Front Hand</string>
+    <string name="BackHand" translatable="true">Back Hand</string>
+    <string name="Chest" translatable="true">Chest</string>
+    <string name="Back" translatable="true">Back</string>
+    <string name="Legs" translatable="true">Legs</string>
+    <string name="Stomach" translatable="true">Stomach</string>
+    <!-- GenericPlan Page -->
+    <string name="ExerciseSuccessfullyAdded" translatable="true">Exercise Successfully Added</string>
+    <string name="ExerciseSuccessfullyRemoved" translatable="true">Exercise Successfully Removed</string>
+    <string name="ExerciseNameExists" translatable="true">The exercise has not been added, there is already an exercise with this name.</string>
+    <string name="SignOut">Sign Out</string>
+    <string name="No">No</string>
+    <string name="Yes">Yes</string>
+    <string name="AreYouSure">Are you sure you want to Sign Out?</string>
+    <string name="Select">Select</string>
+    <string name="Search">Search</string>
+    <string name="Weight">Weight</string>
+    <string name="Other" translatable="true">Other</string>
+    <!-- Arrays -->
+    <string-array name="MuscleType">
+        <item>@string/Shoulder</item>
+        <item>@string/FrontHand</item>
+        <item>@string/BackHand</item>
+        <item>@string/Chest</item>
+        <item>@string/Back</item>
+        <item>@string/Legs</item>
+        <item>@string/Stomach</item>
+        <item>@string/Other</item>
+    </string-array>
+    <string-array name="Home">
+        <item>@string/Sunday</item>
+        <item>@string/Monday</item>
+        <item>@string/Tuesday</item>
+        <item>@string/Wednesday</item>
+        <item>@string/Thursday</item>
+        <item>@string/Friday</item>
+        <item>@string/Saturday</item>
+    </string-array>
+</resources>
