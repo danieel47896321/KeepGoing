@@ -8,10 +8,12 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/add_photo.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/arrow_next.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/back.xml" value="0.2285" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/camera.xml" value="0.3515" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/check_circle.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/dialog_background.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/drop_down.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/email.xml" value="0.17" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/gallery.xml" value="0.3515" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/open.xml" value="0.2285" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/person.xml" value="0.17" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/drawable/plan.xml" value="0.2285" />
@@ -26,6 +28,7 @@
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/activity_reset_password.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dialog_add_exercise.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dialog_add_plan.xml" value="0.2609375" />
+        <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dialog_exercise_image.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dialog_remove.xml" value="0.2609375" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dialog_search_spinner.xml" value="0.2609375" />
         <entry key="..\:/Users/Daniel/AndroidStudioProjects/KeepGoing/app/src/main/res/layout/dropdown_item.xml" value="0.2609375" />

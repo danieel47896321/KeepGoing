@@ -32,8 +32,8 @@
             <ImageView
                 android:id="@+id/ExerciseImage"
                 android:layout_width="88dp"
-                android:layout_height="100dp"
-                android:background="@color/blue"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
@@ -57,12 +57,12 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:textAlignment="viewStart"
-                android:textColor="@color/default_color"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toStartOf="@+id/Arrow"
                 app:layout_constraintStart_toStartOf="@+id/Exercise"
                 app:layout_constraintTop_toBottomOf="@+id/Exercise"
-                tools:text="Description" />
+                tools:text="@string/Description" />
 
             <TextView
                 android:id="@+id/Sets"
@@ -87,17 +87,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:id="@+id/addImage"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:padding="5dp"
-                android:src="@drawable/add_photo"
-                app:layout_constraintBottom_toBottomOf="@+id/ExerciseImage"
-                app:layout_constraintEnd_toEndOf="@+id/ExerciseImage"
-                app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>

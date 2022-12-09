@@ -7,6 +7,7 @@ public class ExerciseSet implements Serializable {
     private int Weight;
     private int Rest;
     private int Reps;
+    private String image = "";
     private boolean Finish = false;
     private boolean Play = false;
     public ExerciseSet() { }
@@ -15,6 +16,12 @@ public class ExerciseSet implements Serializable {
         Weight = weight;
         Rest = rest;
         Reps = reps;
+    }
+    public String getImage() {
+        return image;
+    }
+    public void setImage(String image) {
+        this.image = image;
     }
     public boolean isPlay() {
         return Play;

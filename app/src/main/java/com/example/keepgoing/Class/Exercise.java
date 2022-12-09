@@ -8,7 +8,7 @@ public class Exercise implements Serializable {
     private String Description;
     private String MuscleType;
     private ArrayList<ExerciseSet> Sets;
-    private String Image;
+    private String Image = "";
     public Exercise() { Sets = new ArrayList<>(); }
     public Exercise(String exercise, String description, String muscleType, String image, int reps) {
         Sets = new ArrayList<>();

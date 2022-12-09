@@ -62,6 +62,8 @@
     <string name="Back" translatable="true">Back</string>
     <string name="Legs" translatable="true">Legs</string>
     <string name="Stomach" translatable="true">Stomach</string>
+    <string name="Camera" translatable="true">Camera</string>
+    <string name="Gallery" translatable="true">Camera</string>
     <!-- GenericPlan Page -->
     <string name="ExerciseSuccessfullyAdded" translatable="true">Exercise Successfully Added</string>
     <string name="ExerciseSuccessfullyRemoved" translatable="true">Exercise Successfully Removed</string>

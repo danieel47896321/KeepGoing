@@ -61,6 +61,8 @@
     <string name="ExerciseSuccessfullyAdded" translatable="true">התרגיל נוסף בהצלחה.</string>
     <string name="ExerciseNameExists" translatable="true">קיים כבר תרגיל עם השם הזה.</string>
     <string name="ExerciseSuccessfullyRemoved" translatable="true">התרגיל הוסר בהצלחה.</string>
+    <string name="Camera" translatable="true">מצלמה</string>
+    <string name="Gallery" translatable="true">גלריה</string>
     <!-- Homne Page -->
     <string name="Sunday" translatable="true">ראשון</string>
     <string name="Monday" translatable="true">שני</string>
