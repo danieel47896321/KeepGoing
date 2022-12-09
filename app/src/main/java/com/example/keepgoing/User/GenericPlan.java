@@ -78,7 +78,7 @@ public class GenericPlan extends AppCompatActivity {
     private Button ButtonAdd, ButtonRemove, ButtonCancel;
     private TextInputLayout TextInputLayoutExerciseName, TextInputLayoutDescription, TextInputLayoutTypeOfMuscle, TextInputLayoutReps,TextInputLayoutPlan;
     private Plan plan;
-    private StorageReference storageReference = FirebaseStorage.getInstance("gs://worktracking-ba85c.appspot.com").getReference();
+    private StorageReference storageReference = FirebaseStorage.getInstance("gs://keepgoing-c71f6.appspot.com").getReference();
     private Context context;
     private Uri uri = null;
     private static final int MY_CAMERA_PERMISSION_CODE = 100;
