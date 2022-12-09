@@ -155,9 +155,17 @@ public class GenericPlan extends AppCompatActivity {
         MuscleType();
         ButtonCancel.setOnClickListener( v -> alertDialog.cancel() );
         ButtonAdd.setOnClickListener( v -> {
+            Boolean ExercisesExists = false;
+            for(Exercise exercise : exercises){
+                if(exercise.getExercise().equals(TextInputLayoutExerciseName.getEditText().getText().toString())){
+                    ExercisesExists = true;
+                }
+            }
             if(TextInputLayoutExerciseName.getEditText().getText().toString().equals(""))
                 TextInputLayoutExerciseName.setHelperText(getResources().getString(R.string.Required));
-            else
+            else if(ExercisesExists){
+                TextInputLayoutExerciseName.setHelperText(getResources().getString(R.string.ExerciseNameExists));
+            } else
                 TextInputLayoutExerciseName.setHelperText("");
             if(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals(""))
                 TextInputLayoutTypeOfMuscle.setHelperText(getResources().getString(R.string.Required));
@@ -169,11 +177,11 @@ public class GenericPlan extends AppCompatActivity {
                 TextInputLayoutReps.setHelperText(getResources().getString(R.string.NumberOfReps));
             else
                 TextInputLayoutReps.setHelperText("");
-            if(!(TextInputLayoutExerciseName.getEditText().getText().toString().equals("")) && (Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString()) > 0) && !(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals("")) && !(TextInputLayoutReps.getEditText().getText().toString().equals(""))){
-                alertDialog.cancel();
+            if(!ExercisesExists && !(TextInputLayoutExerciseName.getEditText().getText().toString().equals("")) && (Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString()) > 0) && !(TextInputLayoutTypeOfMuscle.getEditText().getText().toString().equals("")) && !(TextInputLayoutReps.getEditText().getText().toString().equals(""))){
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(plan.getDay()).child(user.getUid()).child(plan.getDate()).child("exercises");
-                exercises.add(new Exercise(TextInputLayoutExerciseName.getEditText().getText().toString(),TextInputLayoutDescription.getEditText().getText().toString(),TextInputLayoutTypeOfMuscle.getEditText().getText().toString(),"null",Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString())));
+                exercises.add(new Exercise(TextInputLayoutExerciseName.getEditText().getText().toString(), TextInputLayoutDescription.getEditText().getText().toString(), TextInputLayoutTypeOfMuscle.getEditText().getText().toString(), "null", Integer.valueOf(TextInputLayoutReps.getEditText().getText().toString())));
                 databaseReference.setValue(exercises);
+                alertDialog.cancel();
             }
         });
     }

@@ -59,7 +59,7 @@
     <string name="ForgotPasswordInfo" translatable="true">נא הזן את כתובת האימייל שברצונך לשחזר עבורו את הסיסמה</string>
     <!-- GenericPlan Page -->
     <string name="ExerciseSuccessfullyAdded" translatable="true">התרגיל נוסף בהצלחה.</string>
-    <string name="ExerciseNameExists" translatable="true">התרגיל לא הוסף, קיים כבר תרגיל עם השם הזה.</string>
+    <string name="ExerciseNameExists" translatable="true">קיים כבר תרגיל עם השם הזה.</string>
     <string name="ExerciseSuccessfullyRemoved" translatable="true">התרגיל הוסר בהצלחה.</string>
     <!-- Homne Page -->
     <string name="Sunday" translatable="true">ראשון</string>

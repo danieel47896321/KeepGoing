@@ -158,7 +158,7 @@ public class WorkoutFragment extends Fragment {
                 alertDialog.cancel();
                 String currentDateTime = new SimpleDateFormat("HH:mm:ss dd-MM-yyyy").format(new Date());
                 DatabaseReference databaseReference = FirebaseDatabase.getInstance("https://keepgoing-c71f6-default-rtdb.europe-west1.firebasedatabase.app").getReference().child("Plans").child(DAY).child(user.getUid()).child(currentDateTime);
-                databaseReference.setValue(new Plan(TextInputLayoutPlan.getEditText().getText().toString(), currentDateTime,DAY));
+                databaseReference.setValue(new Plan(TextInputLayoutPlan.getEditText().getText().toString(), currentDateTime, DAY));
                 new PopUpMSG(view.getContext(), getResources().getString(R.string.AddPlan), getResources().getString(R.string.PlanSuccessfullyAdded));
             }
         });

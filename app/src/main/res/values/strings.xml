@@ -65,7 +65,7 @@
     <!-- GenericPlan Page -->
     <string name="ExerciseSuccessfullyAdded" translatable="true">Exercise Successfully Added</string>
     <string name="ExerciseSuccessfullyRemoved" translatable="true">Exercise Successfully Removed</string>
-    <string name="ExerciseNameExists" translatable="true">The exercise has not been added, there is already an exercise with this name.</string>
+    <string name="ExerciseNameExists" translatable="true">There is already exercise with this name.</string>
     <string name="SignOut">Sign Out</string>
     <string name="No">No</string>
     <string name="Yes">Yes</string>

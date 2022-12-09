@@ -27,7 +27,6 @@ public class GenericPlanAdapter extends RecyclerView.Adapter<GenericPlanAdapter.
     private List<Exercise> exercises;
     private List<Boolean> isClicked;
     private User user;
-    private Intent intent;
     public GenericPlanAdapter(Context context, List<Exercise> exercises, User user) {
         this.context = context;
         this.exercises = exercises;
